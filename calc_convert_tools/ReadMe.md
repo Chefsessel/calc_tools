@@ -18,7 +18,7 @@ Convert a string to morse code
 
 
 ##Exception
-Using jquery UI as a polyfill for <input type="date"> since browser support is still flimsy.
+Using jquery UI as a polyfill for input type=date since native browser support is still flimsy.
 
 ##Attention:
 This stuff does not even have basic error capture, no time, sorry! (thus the stuff here is not intended for the average user, use with caution or add your own measures (advised!)
