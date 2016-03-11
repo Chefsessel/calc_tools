@@ -1,10 +1,27 @@
-# Calcuation Tools (various)
+# Calculation Tools (various)
 
-Written in vanilla JavaScript (well, exception see below) for the pure joy of it.
+Written in vanilla JavaScript (well, exception see below) for the pure joy of it. I had been meddling with this stuff when I was learning JS and figured it shouldn't just sit around on my hard disk, so here you go.
+I don't have to time to make this pretty. I'll keep adding stuff whenever I find the time to churn out new stuff. Again, no time, sorry.
 
-Calculate percentages, your lifetime (in hours, minutes, seconds), your chinese zodiac sign and - the feature you've been longing for - convert a string to morse code.
-I'll keep adding converters and stuff whenever I find the time to churn out new stuff.
+Calculate percentages
+- How much are X % of Y ?
+- X are how much % of Y?
 
-Exception: Using jquery UI as a polyfill for <input type="date"> since browser support is still flimsy.
+Calculate your lifetime
+- Exactly how many days, hours and minutes are you old?
 
-Attention: This stuff does not even have basic error capture, no time, sorry! (thus the stuff here is not intended for the average user, use with caution or add your own measures (advised!)
+Calculate your Chinese Zodiac sign
+- Find out what animal you are!
+
+Convert a string to morse code
+- I know you've been longing for that!
+
+
+** Exception **
+Using jquery UI as a polyfill for <input type="date"> since browser support is still flimsy.
+
+** Attention: **
+This stuff does not even have basic error capture, no time, sorry! (thus the stuff here is not intended for the average user, use with caution or add your own measures (advised!)
+
+** LICENCE **
+Everything here is free as in free bear. Use it, abuse it. Commercially or privately.
