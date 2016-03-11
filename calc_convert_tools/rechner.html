@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title lang="ge">Calculation & Conversion Tools | sebastian-patting.de</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href="rechner.css" rel="stylesheet" type="text/css">	
+  </head>
+<body>
+<div id="wrapper">
+
+    <h1>Calculation Tools</h1>
+    <h2>- written in vanilla JS (for the pure joy of it) - </h2>
+      <div class="calculator">
+        <div class="top">
+  
+		  <h3>Percentages</h3>
+		  <div class="angaben">
+			How much are <input size=5 id=a> % of <input size=5 id=b> ? <div id="total1" class="screen"></div>
+	  
+		  </div>
+		 <input type="button" class="centerblock" value="calculate" onclick=percent1() /> 
+
+		 <hr class="separate cb" />
+		  
+		<div class="angaben">
+		<input size=5 id=c> are how much % of <input size=5 id=d> ? <div id="total2" class="screen"></div>
+		</div>
+		<input type="button" class="centerblock" value="calculate" onclick=percent2() />
+	</div>
+	</div>
+	
+
+        <div class="calculator">
+        <div class="top">
+		<h3>How old are you exactly?</h3>
+		<div class="angaben">
+		Enter birthdate: <input type="date" id="datepicker" size=9> <input type="button" class="inline" value="calculate" onclick=mylifetime() /></div>
+		You are: <div class="screenXL" id="time1"></div>
+	   </div>
+       </div>
+	   	   
+	    <div class="calculator">
+        <div class="top">
+		<h3>Convert to Morse Code</h3>
+		<div class="angaben">
+		Enter word(s): <input type="text" id="chars" size="28">
+		<input type="button" class="inline" value="convert" onclick="morsecode()">
+		<TEXTAREA id="codebox" cols="50" rows="11"> </TEXTAREA>
+		</div>
+       </div>
+	   </div>
+	   
+	   
+	   	<div class="calculator">
+        <div class="top">
+		<h3>What's your Chinese zodiac sign?</h3>
+		<div class="angaben">
+		Enter birthyear, e.g. 1981: <input type="text" id="birthyear" size="5">
+		<input type="button" class="inline" value="convert" onclick="chinesifyme()">
+		</div>		
+		<div class="screenXL centerblock textcenter" id="zodiacsign"></div>
+       </div>
+	   </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script>
+	// calculating percentages
+		function percent1() {
+		 a = document.getElementById("a").value/100;
+		 b = a*document.getElementById("b").value;
+		document.getElementById("total1").innerHTML = b.toFixed(2);
+		 }
+		function percent2() {
+		 a = document.getElementById("c").value;
+		 b = document.getElementById("d").value;
+		 c = a/b;
+		 d = c*100;
+		 document.getElementById("total2").innerHTML = d.toFixed(2) + " %";
+		 }
+
+	// calculate age
+		function mylifetime(){            
+        today = new Date()          
+        BirthDay = new Date(document.getElementById("datepicker").value)         
+        timeold = (today.getTime() - BirthDay.getTime());
+        sectimeold = timeold / 1000;         
+        secondsold = Math.floor(sectimeold);         
+        msPerDay = 24 * 60 * 60 * 1000 ; 
+        timeold = (today.getTime() - BirthDay.getTime());         
+        e_daysold = timeold / msPerDay;         
+        daysold = Math.floor(e_daysold);         
+        e_hrsold = (e_daysold - daysold)*24;         
+        hrsold = Math.floor(e_hrsold);         
+        minsold = Math.floor((e_hrsold - hrsold)*60);           
+        document.getElementById("time1").innerHTML = daysold + " days, " + hrsold + " hours and " + minsold + " minutes old."                       
+		}
+		
+		// converting to morsecode
+		function morsecode() {
+		var charCodes=new Array(36); charCodes["a"]=". _";
+		charCodes["b"]="_ . . .";
+		charCodes["c"]="_ . _ .";
+		charCodes["d"]="_ . .";
+		charCodes["e"]=".";
+		charCodes["f"]=". . _ .";
+		charCodes["g"]="_ _ .";
+		charCodes["h"]=". . . .";
+		charCodes["i"]=". .";
+		charCodes["j"]=". _ _ _";
+		charCodes["k"]="_ . _";
+		charCodes["l"]=". _ . .";
+		charCodes["m"]="_ _";
+		charCodes["n"]="_ .";
+		charCodes["o"]="_ _ _";
+		charCodes["p"]=". _ _ .";
+		charCodes["q"]="_ _ . _";
+		charCodes["r"]=". _ .";
+		charCodes["s"]=". . .";
+		charCodes["t"]="_";
+		charCodes["u"]=". . _";
+		charCodes["v"]=". . . _";
+		charCodes["w"]=". _ _";
+		charCodes["x"]="_ . . _";
+		charCodes["y"]="_ . _ _";
+		charCodes["z"]="_ _ . .";
+		charCodes["1"]=". _ _ _ _";
+		charCodes["2"]=". . _ _ _";
+		charCodes["3"]=". . . _ _";
+		charCodes["4"]=". . . . _";
+		charCodes["5"]=". . . . .";
+		charCodes["6"]="_ . . . .";
+		charCodes["7"]="_ _ . . .";
+		charCodes["8"]="_ _ _ . .";
+		charCodes["9"]="_ _ _ _ .";
+		charCodes["0"]="_ _ _ _ _";
+		var temp=''
+
+		var input = document.getElementById("chars").value.toLowerCase();
+		document.getElementById("codebox").value = "";
+		temp=''
+		var chars = input.split("");
+
+		for (i=0; i<chars.length; i++) {
+		if (chars[i]!=" ") {
+		if (charCodes[chars[i]]) {
+		document.getElementById("codebox").value+=charCodes[chars[i]]+"    ";
+		temp+=chars[i]+"="+charCodes[chars[i]]+"\n";
+		}
+		else
+		temp+=chars[i]+"=(Does not exist, sorry!)\n";
+		}
+		else temp+="\n";
+		}
+		document.getElementById("codebox").value+="\n\n\nExplanation:\n\n"+temp
+	}
+	
+	// chinese zodiac sign
+	function chinesifyme() {
+        var toyear = 1997;
+        var birthyear = document.getElementById("birthyear").value;
+        var birthpet=""
+		
+		if (birthyear == "") {
+			alert('Please enter a birthyear')
+			}
+		else {
+        x = (toyear - birthyear) % 12
+        if ((x == 1) || (x == -11)) {
+            birthpet="mouse"      }
+            else  {
+             if (x == 0)             {
+             birthpet="ox"           }
+             else  {
+              if ((x == 11) || (x == -1)) {
+              birthpet="tiger"          }
+              else  {
+               if ((x == 10) || (x == -2)) {
+               birthpet="rabbit"         }
+               else  {
+                if ((x == 9) || (x == -3))  {
+                birthpet="dragon"         }
+                else  {
+                 if ((x == 8) || (x == -4))  { 
+                 birthpet="snake"          }
+                 else  {
+                  if ((x == 7) || (x == -5))  { 
+                  birthpet="horse"          }
+                  else  {
+                   if ((x == 6) || (x == -6))  { 
+                   birthpet="sheep"          }
+                   else  {
+                    if ((x == 5) || (x == -7))  {  
+                    birthpet="monkey"         }
+                    else  {
+                     if ((x == 4) || (x == -8))  {
+                     birthpet="chicken"        }
+                     else  {
+                      if ((x == 3) || (x == -9))  {
+                      birthpet="dog"            }
+                      else  {
+                       if ((x == 2) || (x == -10))  {
+                       birthpet="pig"             }  
+                      }
+                     }
+                    }
+                   }
+                  }
+                 }
+                }
+               }
+              }
+             }
+            }
+        document.getElementById("zodiacsign").innerHTML = birthpet;
+		}
+	}		
+	
+	// jquery date picker
+	  $(function() {
+	  $( "#datepicker" ).datepicker({
+	  minDate: -99999,
+	  maxDate: 0,
+      changeMonth: true,
+      changeYear: true
+    });
+  });
+ </script>
+	
+  </body>
+</html>
