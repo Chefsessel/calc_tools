@@ -1,7 +1,7 @@
 # Calculation Tools (various)
 
 Written in vanilla JavaScript (well, exception see below) for the pure joy of it. I had been meddling with this stuff when I was learning JS and figured it shouldn't just sit around on my hard disk, so here you go.
-I don't have to time to make this pretty. I'll keep adding stuff whenever I find the time to churn out new stuff. Again, no time, sorry.
+I don't have to time to make this pretty. I'll keep adding whenever I find the time to add some new old stuff. Again, no time, sorry.
 
 Calculate percentages
 - How much are X % of Y ?
@@ -17,11 +17,11 @@ Convert a string to morse code
 - I know you've been longing for that!
 
 
-** Exception **
+##Exception
 Using jquery UI as a polyfill for <input type="date"> since browser support is still flimsy.
 
-** Attention: **
+##Attention:
 This stuff does not even have basic error capture, no time, sorry! (thus the stuff here is not intended for the average user, use with caution or add your own measures (advised!)
 
-** LICENCE **
+##LICENCE
 Everything here is free as in free bear. Use it, abuse it. Commercially or privately.

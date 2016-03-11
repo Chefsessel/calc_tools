@@ -1,7 +1,6 @@
 ﻿/* === BASIC PAGE STYLE === */
 html {height: 100%;background:#fff;}
 body{box-sizing: border-box;font: 18px/1.4 'Roboto', sans-serif;color:#fff;}
-#wrapper {margin:0 auto;display:block;}
 
 /* === BASIC CONTAINERS === */
 .calculator {width: 430px;height:300px;float:left;margin:20px;padding:20px;background:#1e5799;background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 29%, #207cca 100%, #7db9e8 100%);
@@ -10,19 +9,16 @@ border-radius: 3px;box-shadow: 0px 4px #2989d8, 0px 10px 15px rgba(0, 0, 0, 0.2)
 .top .screen {height:30px;width:80px;float: right;padding: 0 10px;background: rgba(0, 0, 0, 0.2);border-radius: 3px;box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);font-size: 15px;text-align: right;letter-spacing: 1px;line-height: 28px;color: #fff;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);}
 .top .screenXL {height:30px;width:340px;padding: 0 10px;margin-top:15px;background: rgba(0, 0, 0, 0.2);border-radius: 3px;box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);font-size: 15px;letter-spacing: 1px;line-height: 30px;color: #fff;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);}
 
-
 /* === HEADLINES & TEXT === */
 h1 {color:#444;font-size:36px;text-align:center;margin-bottom:0;}
 h2 {color:#444;font-size:18px;text-align:center;margin-top:2px;}
 h3 {font-size:18px;text-align:center;}
-
 
 /* === INPUTS === */
 .screen > input {border:0 none;background:transparent;color:#fff;}
 input[type=number] {background:transparent;border: 0 none;color:#fff;font-size:18px;}
 input[type=button]{color: #fff;padding:4px 10px;font-size:14px;border-radius: 4px;text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);border:0 none;background:#666;}
 input[type=button]:hover {background:#da3434;}
-
  
 /* === ETC === */
 .separate {border:1px solid #fff;width:100%;margin: 20px auto;}
